@@ -17,7 +17,7 @@ async function createUsernamePost(req, res) {
 }
 
 module.exports = {
-    getUsernames,
+    getUserNames,
     createUsernameGet,
     createUsernamePost
   };
