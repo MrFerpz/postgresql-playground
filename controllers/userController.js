@@ -22,8 +22,18 @@ async function searchUserGet(req, res) {
     res.render("searchResult", { users: result })
 }
 
+async function deleteUserPost(req, res) {
+    await db.deleteUsername(req.body.deletedUser);
+    console.log("Deleted " + req.body.deletedUser + " from database");
+    res.redirect("/");
+}
+
 function searchUserPageGet(req, res) {
     res.render("searchForm")
+}
+
+function deleteUserPageGet(req, res) {
+    res.render("deleteForm")
 }
 
 module.exports = {
@@ -31,5 +41,7 @@ module.exports = {
     createUsernameGet,
     createUsernamePost,
     searchUserGet,
-    searchUserPageGet
+    searchUserPageGet,
+    deleteUserPost,
+    deleteUserPageGet
   };

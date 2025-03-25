@@ -14,10 +14,15 @@ async function searchUsername(searchedUser) {
     return searchResults.rows;
 }
 
+async function deleteUsername(username) {
+    await pool.query("DELETE FROM usernames WHERE username = $1", [username])
+}
+
 module.exports = {
   getAllUsernames,
   insertUsername,
-  searchUsername
+  searchUsername,
+  deleteUsername
 };
 
 // what did I learn from this hour of trial and error:

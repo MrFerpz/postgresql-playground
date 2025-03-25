@@ -8,5 +8,7 @@ userRouter.post("/new", userController.createUsernamePost);
 userRouter.get("/show", userController.getUserNames);
 userRouter.get("/search", userController.searchUserPageGet);
 userRouter.get("/searchUser", userController.searchUserGet);
+userRouter.post("/delete", userController.deleteUserPost);
+userRouter.get("/delete", userController.deleteUserPageGet);
 
 module.exports = userRouter;
